@@ -1,5 +1,51 @@
 @import "tailwindcss";
 
+/*Animaciones para las olas de la sección de about a la derecha*/
+@keyframes right {
+  0%{
+    transform: translateX(0);
+  }100%{
+    transform: translateX(50%);
+  }
+}
+
+.animate-right-front{
+  animation: right 10s linear infinite;
+}
+.animate-right-mid{
+  animation: right 13s linear infinite;
+}
+.animate-right-back{
+  animation: right 16s linear infinite;
+}
+
+/*Animaciones para las olas de la sección de about a la izquierda*/
+@keyframes left {
+  0%{
+    transform: translateX(0);
+  }100%{
+    transform: translateX(-50%);
+  }
+}
+
+.animate-left-front{
+  animation: left 10s linear infinite;
+}
+.animate-left-mid{
+  animation: left 13s linear infinite;
+}
+.animate-left-back{
+  animation: left 16s linear infinite;
+}
+
+
+.skills{
+  animation: left 10s linear infinite;
+}
+.skills:hover{
+  animation: none;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -23,4 +69,92 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/*Sección de imágenes hecha sin adaptar a tailwind por falta de tiempo*/
+#imagenes {
+  height: 470px;
+  padding-top: 100px;
+}
+#imagenes .contenedor_contenedor {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  transition: all 0.8s ease;
+}
+#imagenes .contenedor_contenedor .contenedor_img {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  width: 80%;
+  gap: 5%;
+  margin-top: 80px;
+}
+#imagenes .contenedor_contenedor .contenedor_img .img1 {
+  grid-column: 1;
+}
+#imagenes .contenedor_contenedor .contenedor_img .img1:hover ~ .img2 {
+  transform: scale(1) translateY(0);
+  opacity: 0;
+  pointer-events: none;
+}
+#imagenes .contenedor_contenedor .contenedor_img .img1:hover {
+  transform: scale(1.15) translateY(-30px);
+}
+#imagenes .contenedor_contenedor .contenedor_img .img2 {
+  grid-column: 2;
+  grid-row: 1;
+  transform: scale(1.15) translateY(-30px);
+}
+#imagenes .contenedor_contenedor .contenedor_img .img2:hover {
+  transform: scale(1.15) translateX(-50%);
+}
+#imagenes .contenedor_contenedor .contenedor_img .img3 {
+  grid-column: 3;
+}
+#imagenes .contenedor_contenedor .contenedor_img .img3:hover ~ .img2 {
+  transform: scale(1) translateY(0);
+  opacity: 0;
+  pointer-events: none;
+}
+#imagenes .contenedor_contenedor .contenedor_img .img3:hover {
+  transform: scale(1.15) translateY(-30px);
+}
+#imagenes .contenedor_contenedor .contenedor_img .img {
+  background-position: center;
+  background-size: cover;
+  width: 400px;
+  height: 250px;
+  margin: 0;
+  text-align: center;
+  transition: all 0.8s ease;
+}
+.img-content {
+  background-color: #2196f3;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  opacity: 0;
+  z-index: 1000;
+  transition: all 1s ease;
+}
+.img-content h2 {
+  color: #fff;
+  font-size: 1.5rem;
+}
+.imgcontent1:hover .img-content {
+  transform: translateX(100%);
+  opacity: 1;
+}
+.imgcontent2:hover {
+  transform: translateX(-50%);
+}
+.imgcontent2:hover .img-content {
+  transform: translateX(100%);
+  opacity: 1;
+}
+.imgcontent3:hover .img-content {
+  transform: translateX(-100%);
+  opacity: 1;
 }
