@@ -78,18 +78,16 @@ export default function Navbar(){
 
             <nav className="hidden md:block items-center absolute right-10 w-2/5 text-green-400">
                 <ul className="flex justify-around text-base md:text-lg lg:text-xl">
-                    <li>Home</li>
-                    <li>Motos</li>
-                    <li>Home</li>
-                    <li>Motos</li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Habilidades</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </nav>
             <nav id="mobNav" className="md:hidden transition-transform duration-500 fixed left-0 translate-x-[-100%] top-18 w-[30vw] text-center shadow-sm">
                 <ul>
-                    <li className="border-b-gray-600 border-b-1">Home</li>
-                    <li className="border-b-gray-600 border-b-1">Motos</li>
-                    <li className="border-b-gray-600 border-b-1">Home</li>
-                    <li className="border-b-gray-600 border-b-1">Motos</li>
+                    <li className="border-b-gray-600 border-b-1"><a href="#about">About</a></li>
+                    <li className="border-b-gray-600 border-b-1"><a href="#skills">Habilidades</a></li>
+                    <li className="border-b-gray-600 border-b-1"><a href="#contacto">Contacto</a></li>
                 </ul>
             </nav>
             
