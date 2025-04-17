@@ -5,7 +5,7 @@ import gestorImg from '../media/gestor.jpg';
 
 const Proyectos = () => {
   return (
-    <section id="imagenes" className="min-h-screen flex items-center justify-center pt-24 hidden lg:block">
+    <section id="imagenes" className="min-h-screen items-center justify-center pt-24 hidden lg:block">
       <div>
 
         <h2 className="text-3xl md:text-5xl lg:text-6xl mb-5 text-center"><span className="text-yellow-400">Mis</span> proyectos</h2>

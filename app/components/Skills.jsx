@@ -21,7 +21,7 @@ export default function Skills(){
 
 
     return(
-        <section id="skills" className="mt-50 mb-50">
+        <section id="skills" className="mt-50 mb-50 overflow-hidden">
             <h2 className="text-3xl md:text-5xl lg:text-6xl text-center mb-15"><span className="text-yellow-400">Mis</span> habilidades</h2>
             <div ref={grid} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-20 w-[90%] m-auto">
                 {skillsList.map((skill, index) => {
