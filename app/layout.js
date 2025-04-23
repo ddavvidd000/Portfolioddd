@@ -1,9 +1,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Head from "next/head";
-import Footer from "./components/Footer";
+import Footer from "./components/portfolio/Footer";
 
-import Navbar from "./components/Navbar";
+import Navbar from "./components/portfolio/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></link>
       </Head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#f5f5f5]`}
       >
         <Navbar />
         {children}

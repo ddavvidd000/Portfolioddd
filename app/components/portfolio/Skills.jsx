@@ -1,9 +1,9 @@
 'use client'
 
 import Skill from "./Skill";
-import skillsList from "./skillsList";
+import skillsList from "./data/skillsList";
 import { useRef, useEffect, useState } from "react";
-import { countCharacter } from "../library";
+import { countCharacter } from "../../library";
 
 export default function Skills(){
     const grid = useRef(null);
@@ -15,9 +15,9 @@ export default function Skills(){
         const countRows = () => {
             setRows(countCharacter(getComputedStyle(grid.current).gridTemplateColumns, ' ')+1);
         };
-        window.addEventListener('resize', countRows)
+        window.addEventListener('resize', countRows);
         countRows();
-    }, [])
+    }, []);
 
 
     return(

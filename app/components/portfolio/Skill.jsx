@@ -2,7 +2,7 @@
 
 import Progress from "./Progress"
 import { useRef, useEffect, useState } from "react";
-import { isInCenter } from "../library";
+import { isInCenter } from "../../library";
 
 export default function Skill({name="Skill name", level=75, rows=4, index=0 }) {
     const skill = useRef(null);
@@ -25,7 +25,7 @@ export default function Skill({name="Skill name", level=75, rows=4, index=0 }) {
     }
 
     let pair = (row%2 == 0);
-    console.log(pair);
+    //console.log(pair);
 
     useEffect(() => {
         const animate = () => {

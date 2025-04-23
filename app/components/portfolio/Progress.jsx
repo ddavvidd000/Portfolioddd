@@ -1,6 +1,6 @@
 'use client'
 
-import { isInCenter } from "../library";
+import { isInCenter } from "../../library";
 import { useRef, useEffect } from "react";
 
 export default function Progress({
