@@ -46,6 +46,36 @@
   animation: none;
 }
 
+.shimmer{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+.shimmer::before{
+  content: "";
+  position: absolute;
+  background: linear-gradient(-45deg, #fff0 40%, #fafafa 48%, #fafafa 52%, #fff0 60%);
+  top: -100%;
+  bottom: 0;
+  left: -100%;
+  right: 0;
+  z-index: 1000;
+  transform: translate(-10%, -10%);
+  animation: animate-shimmer 4s linear infinite;
+}
+
+@keyframes animate-shimmer {
+  50% {
+    transform: translate(60%, 60%);
+  }100% {
+    transform: translate(60%, 60%);
+  }
+}
+
 
 
 :root {

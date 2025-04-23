@@ -1,6 +1,6 @@
-import medio from '@/app/media/proyects/medio.jpg'
-import gestor from '@/app/media/proyects/gestor.jpg'
-import remoto from '@/app/media/proyects/remoto.png'
+import medio from '@media/portfolio/proyects/medio.jpg'
+import gestor from '@media/portfolio/proyects/gestor.jpg'
+import remoto from '@media/portfolio/proyects/remoto.png'
 
 const proyectsList = [{
     id: 1,

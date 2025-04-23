@@ -51,6 +51,7 @@ export default function Skill({name="Skill name", level=75, rows=4, index=0 }) {
             ref={skill} 
             className={`h-80 w-60 shadow-2xl rounded-2xl border-amber-400 border-2 transition-all duration-500 ${isVisible ? 'opacity-100 translate-x-0' : `opacity-0 translate-x-[${pair ? '-100%' : '100%'}]`} scale-75 lg:scale-100`}
         >
+            <div className="shimmer"></div>
             <h1 className="text-center text-4xl pt-10 h-25">{name}</h1>
             <Progress size={200} percentage={progress} text={nivel} tailClass="m-auto" />
 

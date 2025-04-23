@@ -1,5 +1,5 @@
 import Image from "next/image"
-import gestor from '../../media/proyects/gestor.jpg'
+import gestor from '@media/portfolio/proyects/gestor.jpg'
 
 export default function Proyect({
     tailClass = "",

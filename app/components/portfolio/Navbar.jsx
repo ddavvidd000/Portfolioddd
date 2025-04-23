@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useRef } from "react";
-import { Bars3Icon } from '@heroicons/react/24/outline';
 
 export default function Navbar(){
 

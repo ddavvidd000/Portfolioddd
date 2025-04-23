@@ -1,15 +1,15 @@
 import Image from "next/image"
-import about from "../../media/about.jpg"
+import about from "@media/portfolio/about.jpg"
 
 /*Imports de imágenes de ondas para la parte superior*/
-import wavetopfront from "../../media/wave/wavetopfront.png"
-import wavetopmid from "../../media/wave/wavetopmid.png"
-import wavetopback from "../../media/wave/wavetopback.png"
+import wavetopfront from "@media/portfolio/wave/wavetopfront.png"
+import wavetopmid from "@media/portfolio/wave/wavetopmid.png"
+import wavetopback from "@media/portfolio/wave/wavetopback.png"
 
 /*Imports de imágenes de ondas para la parte inferior*/
-import wavebotfront from "../../media/wave/wavebotfront.png"
-import wavebotmid from "../../media/wave/wavebotmid.png"
-import wavebotback from "../../media/wave/wavebotback.png"
+import wavebotfront from "@media/portfolio/wave/wavebotfront.png"
+import wavebotmid from "@media/portfolio/wave/wavebotmid.png"
+import wavebotback from "@media/portfolio/wave/wavebotback.png"
 
 export default function About(){
     return (<>

@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import facebookIcon from '../../media/facebook.png';
-import twitterIcon from '../../media/twitter.png';
-import instagramIcon from '../../media/instagram.png';
+import facebookIcon from '@media/portfolio/facebook.png';
+import twitterIcon from '@media/portfolio/twitter.png';
+import instagramIcon from '@media/portfolio/instagram.png';
 
 const Footer = () => {
   return (
