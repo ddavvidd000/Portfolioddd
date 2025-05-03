@@ -2,7 +2,7 @@
 
 import Progress from "./Progress"
 import { useRef, useEffect, useState } from "react";
-import { isInCenter } from "../../library";
+import { d } from "@/app/library";
 
 export default function Skill({name="Skill name", level=75, rows=4, index=0 }) {
     const skill = useRef(null);
@@ -29,7 +29,7 @@ export default function Skill({name="Skill name", level=75, rows=4, index=0 }) {
 
     useEffect(() => {
         const animate = () => {
-            if (isInCenter(skill.current)) {
+            if (d(skill.current).isInCenter()) {
                 setIsVisible(true);
                 setProgress(level);
             } else {

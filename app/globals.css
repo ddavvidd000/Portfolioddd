@@ -46,6 +46,8 @@
   animation: none;
 }
 
+
+/* Efecto shimmer adaptable a cualquier contenedor */
 .shimmer{
   position: absolute;
   top: 0;
@@ -53,8 +55,9 @@
   left: 0;
   right: 0;
   overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
 }
-
 .shimmer::before{
   content: "";
   position: absolute;
@@ -67,7 +70,6 @@
   transform: translate(-10%, -10%);
   animation: animate-shimmer 4s linear infinite;
 }
-
 @keyframes animate-shimmer {
   50% {
     transform: translate(60%, 60%);

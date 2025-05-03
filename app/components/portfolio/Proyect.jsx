@@ -22,12 +22,13 @@ export default function Proyect({
 
                 {/*Backface*/}
                 <div className='h-full min-w-full bg-[#f1f1f1] shadow-2xl border-amber-400 border-1 backface-hidden absolute rotate-y-180 rounded-2xl flex items-center justify-center text-center'>
+                    <div className="shimmer"></div>
                     <div className='h-5/6 w-9/10 relative'>
                         <h2 className='text-center text-2xl font-bold text-[#00d084]'>{name}</h2>
-                        <p className='text-lg text-justify absolute top-[50%] translate-y-[-50%]'>{text}</p>
+                        <p className='text-[16px] text-justify absolute top-[50%] translate-y-[-50%]'>{text}</p>
                     </div>
                     <div className='flex float-right absolute bottom-2 right-5 gap-5 text-white *:bg-[#2196f3]'>
-                        <a className="rounded-2xl h-10 w-20 flex items-center justify-center" href={live}>Live</a>
+                        <a className="relative rounded-2xl h-10 w-20 flex items-center justify-center" href={live}>Live</a>
                         <a className="rounded-2xl h-10 w-20 flex items-center justify-center" href={code}>Codigo</a>
                     </div>
                 </div>

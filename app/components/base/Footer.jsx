@@ -5,7 +5,7 @@ import instagramIcon from '@media/portfolio/instagram.png';
 
 const Footer = () => {
   return (
-    <footer className="text-center py-8 bg-white" id="contacto">
+    <footer className="text-center py-8 bg-white" id="contact">
       <div className="container mx-auto">
         <a href="#" className="text-green-800 text-lg font-bold">Contacto:</a>
         <p>Correo: dsafar.ibz@gmail.com</p>

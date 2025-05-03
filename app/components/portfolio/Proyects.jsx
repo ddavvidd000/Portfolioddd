@@ -3,7 +3,7 @@ import Proyect from "./Proyect"
 
 export default function Proyectos(){
     return (
-        <section>
+        <section id="proyects">
             <h2 className="text-3xl md:text-5xl lg:text-6xl text-center mb-15"><span className="text-yellow-400">Últimos</span> proyectos</h2>
             <div className="md:flex md:justify-around min-h-120 space-y-5">
                 {proyectsList.slice(-3).map((proyect, index) => {

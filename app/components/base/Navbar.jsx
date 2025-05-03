@@ -1,6 +1,9 @@
 'use client'
 
+import Link from "next/link";
 import { useEffect, useRef } from "react";
+
+import navLinks from "./data/navLinks";
 
 export default function Navbar(){
 
@@ -11,14 +14,18 @@ export default function Navbar(){
     function hideHeader(){
         const header = document.getElementById('header');
         
+        //Guardo el valor del scroll actual
         let scroll = window.scrollY;
 
+        //Comparo el scroll actual con el anterior para saber la dirección del scroll
         if(scroll > prevScrollRef.current){
             header.style.transform = "translateY(-100%)";
+            //Oculto tambien el nav del móvil por si está abierto al hacer scroll
             hideNav();
         }else{
             header.style.transform = "translateY(0)";
         }
+        //Guardo el scroll actual en la variable previa para tener la referencia al volver a llamar a la función
         prevScrollRef.current = scroll;
     }
 
@@ -27,26 +34,22 @@ export default function Navbar(){
         prevScrollRef.current = window.scrollY;
         
         window.addEventListener("scroll", hideHeader);
-        console.log("prueba");
 
         return () => {window.removeEventListener("scroll", hideHeader)}
     }, []);
 
 
     //
-    // Función para alternar entre mostrar el nav de pantallas pequeñas o no
+    // Función para desplegar y ocultar el nav en las pantallas pequeñas
     function toggleNav(){
         document.getElementById('mobNav').classList.toggle('translate-x-[-100%]');
     }
 
-    //
-    // Función recurrente para ocultar el nav de pantallas pequeñas
+    // Función para ocultar el nav en las pantallas pequeñas
     function hideNav(){
         document.getElementById('mobNav').classList.add('translate-x-[-100%]');
     }
 
-    
-    //
     // Añadir el event listener que llama a la función hideNav cuando se pierde el focus del botón de menú
     useEffect(() => {
         const bars = document.getElementById('bars');
@@ -56,6 +59,7 @@ export default function Navbar(){
 
     }, []);
 
+    //
     // Añadir el cdn de font awesome para utilizar los iconos
     useEffect(() => {
         var link = document.createElement('link');
@@ -77,16 +81,39 @@ export default function Navbar(){
 
             <nav className="hidden md:block items-center absolute right-10 w-2/5 text-green-400">
                 <ul className="flex justify-around text-base md:text-lg lg:text-xl">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Habilidades</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
+                    {
+                        navLinks.map((link) => {
+                            return (
+                                <li key={link.id} className="relative group">
+                                    <Link className="block h-[100%] w-[100%]" href={link.href}>{link.name}</Link>
+                                    {link.sub && <ul className="shadow absolute top-[100%] left-[50%] hidden translate-x-[-50%] group-hover:block bg-[#fff] rounded-sm">
+                                        {
+                                            link.sub.map((sublink, index) => {
+                                                return (
+                                                    <li key={sublink.id} className={`mt-1 ${index == 0 || 'border-t-1'}`}>
+                                                        <Link className="block h-[100%] w-[100%] py-1 px-3" href={`${sublink.href.startsWith('/') || link.href + '/'}${sublink.href}`}>{sublink.name}</Link>
+                                                    </li>
+                                                )
+                                            })
+                                        }
+                                    </ul>}
+                                </li>
+                            );
+                        })
+                    }
                 </ul>
             </nav>
             <nav id="mobNav" className="md:hidden transition-transform duration-500 fixed left-0 translate-x-[-100%] top-18 w-[30vw] text-center shadow-sm">
                 <ul>
-                    <li className="border-b-gray-600 border-b-1"><a href="#about">About</a></li>
-                    <li className="border-b-gray-600 border-b-1"><a href="#skills">Habilidades</a></li>
-                    <li className="border-b-gray-600 border-b-1"><a href="#contacto">Contacto</a></li>
+                {
+                        navLinks.map((link) => {
+                            return (
+                                <li key={link.id} className="border-b-gray-600 border-b-1 bg-white relative">
+                                    <Link href={link.href}>{link.name}</Link>
+                                </li>
+                            );
+                        })
+                    }
                 </ul>
             </nav>
             

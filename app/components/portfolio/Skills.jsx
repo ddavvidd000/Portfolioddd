@@ -3,7 +3,7 @@
 import Skill from "./Skill";
 import skillsList from "./data/skillsList";
 import { useRef, useEffect, useState } from "react";
-import { countCharacter } from "../../library";
+import { d } from "@/app/library";
 
 export default function Skills(){
     const grid = useRef(null);
@@ -13,7 +13,7 @@ export default function Skills(){
 
     useEffect(() => {
         const countRows = () => {
-            setRows(countCharacter(getComputedStyle(grid.current).gridTemplateColumns, ' ')+1);
+            setRows(d(getComputedStyle(grid.current).gridTemplateColumns).countCharacter(' ')+1);
         };
         window.addEventListener('resize', countRows);
         countRows();
@@ -26,8 +26,8 @@ export default function Skills(){
             <div ref={grid} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-20 w-[90%] m-auto">
                 {skillsList.map((skill, index) => {
                     return (
-                        <div className="flex justify-center">
-                            <Skill key={skill.id} name={skill.name} level={skill.level} rows={rows} index={index}/>
+                        <div key={skill.id} className="flex justify-center">
+                            <Skill name={skill.name} level={skill.level} rows={rows} index={index}/>
                         </div>);
                 })}
             </div>

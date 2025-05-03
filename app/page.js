@@ -1,8 +1,7 @@
-import Image from "next/image";
-import Hero from "./components/portfolio/Hero";
-import About from "./components/portfolio/About";
-import Skills from "./components/portfolio/Skills";
-import Proyects from "./components/portfolio/Proyects";
+import Hero from "@portfolio/Hero";
+import About from "@portfolio/About";
+import Skills from "@portfolio/Skills";
+import Proyects from "@portfolio/Proyects";
 
 export default function Home() {
   return (<>
